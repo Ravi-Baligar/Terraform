@@ -1,0 +1,118 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.1",
+  "serial": 134,
+  "lineage": "4e4dd26f-e20c-ef77-03ef-527bb0a78883",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.logging",
+      "mode": "data",
+      "type": "aws_caller_identity",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_id": "430118839404",
+            "arn": "arn:aws:iam::430118839404:user/Ravi_Baligar",
+            "id": "430118839404",
+            "user_id": "AIDAWIJIUURWBC3IB2ZQE"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.logging",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "logs_bucket",
+      "provider": "module.logging.provider[\"registry.terraform.io/hashicorp/aws\"].us",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::dev-logs-bucket-430118839404",
+            "bucket": "dev-logs-bucket-430118839404",
+            "bucket_domain_name": "dev-logs-bucket-430118839404.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_region": "eu-central-1",
+            "bucket_regional_domain_name": "dev-logs-bucket-430118839404.s3.eu-central-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [
+              {
+                "id": "29171f26fb62fabc260a6224ba6385b647694b98aaea78735903bb6e73fd1067",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z21DNDUVLTQW6Q",
+            "id": "dev-logs-bucket-430118839404",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"elasticloadbalancing.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::dev-logs-bucket-430118839404/*\",\"Sid\":\"1\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"StringEquals\":{\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"vpc-flow-logs.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::dev-logs-bucket-430118839404/*\",\"Sid\":\"2\"},{\"Action\":\"s3:PutObject\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:logs:us-east-1:430118839404:*\"},\"StringEquals\":{\"aws:SourceAccount\":\"430118839404\",\"s3:x-amz-acl\":\"bucket-owner-full-control\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"delivery.logs.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::dev-logs-bucket-430118839404/AWSLogs/430118839404/*\",\"Sid\":\"AWSLogDeliveryWrite1\"},{\"Action\":\"s3:GetBucketAcl\",\"Condition\":{\"ArnLike\":{\"aws:SourceArn\":\"arn:aws:logs:us-east-1:430118839404:*\"},\"StringEquals\":{\"aws:SourceAccount\":\"430118839404\"}},\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"delivery.logs.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::dev-logs-bucket-430118839404\",\"Sid\":\"AWSLogDeliveryAclCheck1\"}],\"Version\":\"2012-10-17\"}",
+            "region": "eu-central-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "Env": "dev",
+              "Name": "dev-logs-bucket"
+            },
+            "tags_all": {
+              "Env": "dev",
+              "Name": "dev-logs-bucket"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "430118839404",
+            "bucket": "dev-logs-bucket-430118839404",
+            "region": "eu-central-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.logging.data.aws_caller_identity.current"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
